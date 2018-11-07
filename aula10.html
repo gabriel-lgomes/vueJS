@@ -17,18 +17,41 @@
 		var app = new Vue ({
 
 			el: "#app",
+
+			beforeCreate () {
+				console.log('beforeCreate');
+				console.log('Titulo', this.titulo);
+				console.log('el', this.$el);
+			},
+
+			created () {
+				console.log('created');
+				console.log('Titulo', this.titulo);
+				console.log('el', this.$el);
+			},
+
+			beforeMount () {
+				console.log('beforeMount');
+				console.log('Titulo', this.titulo);
+				console.log('el', this.$el);
+			},
+
+			mounted () {
+				console.log('mounted');
+				console.log('Titulo', this.titulo);
+				console.log('el', this.$el);
+			},
+
+			beforeUpdate () {
+				console.log('beforeUpdate');
+			},
+
+			updated () {
+				console.log('updated');
+			},
+
 			data: {
 				titulo: "Aula  10 - Vuejs",
-			},
-
-			computed: {
-
-			},
-
-			watch: {
-			},
-
-			methods: {
 			},
 
 		});
