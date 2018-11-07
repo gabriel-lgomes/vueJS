@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V-FOR - Vuejs</title>
+</head>
+<body>
+	
+	<div id="app">
+		<h1>{{ titulo }}</h1>
+
+		<ul>
+			<li v-for="(item, index) in linguages"> {{ index }} - {{ item.nome }}</li>
+		</ul>
+		
+	</div>
+
+	<script src="http://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue ({
+			el: "#app",
+			data: {
+				titulo: "Aula  03 - Vuejs",
+				linguages: [
+					{ nome: "Javascript" },
+					{ nome: "C#" },
+					{ nome: "Java" },
+					{ nome: "PHP" },	
+				]	
+			}
+		});
+	</script>
+</body>
+</html>

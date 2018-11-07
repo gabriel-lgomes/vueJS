@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>COMPUTED E WATCH - Vuejs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	
+	<div id="app">
+		<h1>{{ titulo }}</h1>
+
+		<!-- COMPUTED = Serve para retornar valores e fazer algumas rotinas simples de programação. Caso a variavel seja alterada o computed irá rodar novamente -->
+
+		<!-- WATCH = Observar quando uma variável foi alterada -->
+
+		{{ fullName }}
+
+	</div>	
+
+	<script src="http://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue ({
+
+			el: "#app",
+			data: {
+				titulo: "Aula  09 - Vuejs",
+				firstName: "",
+				lastName: "",
+			},
+
+			computed: {
+				fullName () {
+					return this.firstName + ' ' + this.lastName;
+				}
+			},
+
+			watch: {
+				firstName (newValue){
+					this.updateUser();
+				}
+			},
+
+			methods: {
+				updateUser() {
+					console.log("Usuário Atualizado!")
+				}
+			},
+
+		});
+	</script>
+</body>
+</html>

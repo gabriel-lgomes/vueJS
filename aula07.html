@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V-ON - Vuejs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	
+	<div id="app">
+		<h1>{{ titulo }}</h1>
+
+		<form action="http://google.com">
+
+			<!-- V-ON -> Pode ser usado de duas formas = V-ON -->
+
+			<button type="submit" class="btn btn-primary" v-on:click.prevent.top="enviar();">ENVIAR</button>
+
+			<!-- V-ON -> Pode ser usado de duas formas = @ -->
+
+			<button type="submit" class="btn btn-primary" @:click.prevent.top="enviar();">ENVIAR</button>
+
+		</form>
+
+	</div>	
+
+	<script src="http://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue ({
+
+			el: "#app",
+			data: {
+				titulo: "Aula  07 - Vuejs",
+			},
+
+			methods: {
+
+				enviar () {
+					alert('Enviado!');
+				},
+
+			}	
+
+		});
+	</script>
+</body>
+</html>

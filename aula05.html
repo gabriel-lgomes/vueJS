@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V-BIND - Vuejs</title>
+
+	<style>
+		.red {
+			color: red;
+		}
+
+		.green {
+			color: green;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<div id="app">
+		<h1>{{ titulo }}</h1>
+
+
+		<!-- BIND -> Primeira forma V-BIND: -->
+		<p v-bind:class="classHtml">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore commodi quaerat quia excepturi dignissimos unde quos omnis, consectetur provident nemo, quam, repellendus adipisci. Nam, nisi corporis consequuntur odit id, officiis.</p>
+
+		<!-- BIND -> Segunda forma : -->
+		<p :class="classHtml">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro debitis libero eos sit sapiente, totam. Architecto numquam labore consequuntur maiores animi vitae, neque! Similique at illo illum mollitia eligendi dolore!</p>
+
+	</div>	
+
+	<script src="http://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue ({
+			el: "#app",
+			data: {
+				titulo: "Aula  05 - Vuejs",
+				classHtml: "red",
+				
+			}
+		});
+	</script>
+</body>
+</html>

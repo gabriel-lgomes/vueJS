@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V-BIND CLASS e STYLE - Vuejs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	
+	<div id="app">
+		<h1>{{ titulo }}</h1>
+
+		<button class="btn" :class="btnClassLimpar" :style="btnStyleLimpar">Limpar</button>
+		<button class="btn" :class="btnClassEnviar" :style="btnStyleEnviar">Enviar</button>
+
+	</div>	
+
+	<script src="http://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue ({
+			el: "#app",
+			data: {
+				titulo: "Aula  06 - Vuejs",
+				btnClassLimpar: {
+					'btn-danger': true,
+					'btn-sm': true
+				},
+				btnClassEnviar: [
+					'btn-primary', { 'btn-lg': false }
+				],
+				btnStyleLimpar: [
+					{ 'font-size': '50px' },
+					{ 'text-transform': 'lowercase' }
+				],
+				btnStyleEnviar: {
+					'font-size': '10px'
+				},
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V-IF e V-ELSE - Vuejs</title>
+</head>
+<body>
+	
+	<div id="app">
+		<h1>{{ titulo }}</h1>
+		<div v-if="usuario.id == '1'">
+			Id: {{usuario.id}},<br>
+			Nome: {{usuario.nome}}<br>
+			Profissao: {{usuario.profissao}}
+		</div>
+		<div v-else>
+			Usuário nao existe!
+		</div>
+	</div>
+
+	<script src="http://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue ({
+			el: "#app",
+			data: {
+				titulo: "Aula  02 - Vuejs",
+				usuario: {
+					id: "1",
+					nome: "Jon Snow",
+					profissao: "Ator"
+				}
+			}
+		});
+	</script>
+</body>
+</html>
